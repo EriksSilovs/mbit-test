@@ -1,0 +1,922 @@
+
+*{ -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+
+body, html{
+	background: rgb(252, 252, 254, 0.9);
+  font-family: 'Source Sans Pro', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 0%;
+  width: 100%;
+
+}
+
+button{
+  cursor: pointer;
+}
+
+.visible-window{
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  overflow: hidden;
+
+  height: 800px;
+	width: 1360px;
+  /* nosaka izmeru redzamamajam logam  */
+}
+.main-background{
+  background: url(../img/index_BG.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center ;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    -webkit-animation: bganim 15s infinite linear;
+    animation: bganim 15s infinite linear;
+}
+    @keyframes bganim {
+      0% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+      50% {
+      -webkit-transform: scale(1.2);
+      transform: scale(1.2);
+      }
+      100%{
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      }
+    }
+    @-webkit-keyframes bganim {
+      0% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+      50% {
+      -webkit-transform: scale(1.2);
+      transform: scale(1.2);
+      }
+      100%{
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      }
+    } 
+
+/* Animation background scaling, ishues with  bigger screen sizes */
+
+.main-info{
+	margin: 190px auto auto auto;
+	width: 920px;
+	height: 420px;
+	position: relative;
+}
+
+
+.grey-container{
+    display: block;
+    width: 920px;
+    height: 420px;
+    margin: 0 auto;
+   
+    background-color: rgba(15, 26, 47, 0.9);
+    color: white;
+}
+
+.left{
+  padding-top: 42px;
+	width: 280px;
+	float: left;
+	margin-left: 80px;
+
+}
+.right{
+  padding-top: 71px;
+  width: 280px;
+	float: right;
+	margin-right: 80px;
+}
+
+.heading{
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: lighter;
+  font-size: 22.30pt; /*izmantojot neorginālos photoshop izmērus iznāca panākt pixelperfect */
+  color: #ffffff;
+  padding-top: 4px;
+  margin-left: 1px;
+  margin-bottom: 14px;
+}
+
+.grey-container p{ 
+  font-family: 'Source Sans Pro', sans-serif ; 
+  font-weight: normal !important; 
+
+  font-size: 16px;
+  line-height: 206%;
+  font-weight: bold;
+    color: #ffffff;
+
+}
+.left button, .right button{
+  width: 140px;
+  height: 50px;
+  background: none;
+  position: relative;
+  text-transform: uppercase;
+  border: 2px solid #49abfe;
+  border-radius: 50px;
+  color: white;
+}
+  .left button:hover, .right button:hover{
+    background: #49abfe;
+    transition: 0.5s;
+  }
+
+
+  /* baltais logs */
+.white-window{
+	width: 460px;
+	height: 460px;
+	background-color: white;
+	position: absolute;
+	top: -20px;
+	left: 440px;
+}
+/* ----fold linija */
+.fold-middle{
+	background-color: #20293a;
+	width: 10px;
+	height: 420px;
+	position: absolute;
+	top: 20px;
+	left: -10px;
+	z-index: -1;
+}
+.fold-top{
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0 0 20px 10px;
+	border-color: transparent transparent #89deff transparent;
+	position: absolute;
+	top: 0;
+	left: -10px;
+}
+.fold-bottom{
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 20px 0 0 10px;
+	border-color: #89deff transparent transparent transparent;
+	position: absolute;
+	bottom: 0;
+	left: -10px;
+}
+/* ------\fold beidzas/ */
+.active-window{
+  position: relative;
+  height: 491px;
+  width: 0px;
+  grid-area:overlap;
+  z-index: 29;
+}
+#item-login{
+   
+  position: absolute;
+  height: 472px ;
+  width: 461px ;
+  grid-area:overlap;
+  z-index: 20;
+}
+
+#item-signUp{
+
+  position: absolute;
+  height: 472px ;
+  width: 461px ;
+  grid-area:overlap;
+  z-index: 20;
+
+}
+
+.container1 h1{
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: lighter;
+  color: #3e495e;
+  padding-top: 10px;
+  line-height: 100%;
+}
+#login{
+  height: 460px;
+  width: 460px;
+  right: 17%;
+  top: 21%;
+  z-index: 8;
+  grid-area:overlap;
+}
+.formContent{
+  padding-left: 21.5%;
+  padding-right: 18%;
+  padding-top: 11%;
+}
+
+.container1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: -6px;
+  margin-top: 6px;
+}
+
+/* sakārto input field un bildes katru savā pusē */
+.container1 img, .container2_1 img,  .container2_2 img, .containerName img{
+  float:right
+}
+.container2_3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container2_1, .container2_2, .container2_3, .containerName {
+padding-top: 10.5%;
+padding-bottom: 6.5%;
+}
+
+.container2_1, .container2_2, .containerName {
+  border-bottom: 1px solid #cbd2df;
+}
+
+form input {
+  border: none;
+}
+
+input:focus, textarea:focus, select:focus{
+  outline: none;
+}
+
+/* floating effect email */
+.container2_1 input:focus ~ .floating-label,
+.container2_1 input:not(:focus):valid ~ .floating-label{
+  top: 170px;
+  bottom: 10px;
+  left: 98px;
+  font-size: 11px;
+  opacity: 1;
+  color: #8495b7;
+}
+
+.container2_1 .inputText {
+  font-size: 14px;
+  width: 200px;
+  height: 35px;
+  color: black
+}
+
+.container2_1 .floating-label {
+  position: absolute;
+  pointer-events: none;
+  left: 98px;
+  top: 180.5px; /* email pozifijas maiņa */
+  transition: 0.2s ease all;
+  color: #8495b7;
+}
+/* password */
+.container2_2 input:focus ~ .floating-label,
+.container2_2  input:not(:focus):valid ~ .floating-label{
+  top: 237px;
+  bottom: 10px;
+  left: 98px;
+  font-size: 11px;
+  opacity: 1;
+  color: #8495b7;
+}
+
+.container2_2 .inputText {
+  font-size: 14px;
+  width: 200px;
+  height: 35px;
+  color: black
+}
+
+.container2_2 .floating-label {
+  position: absolute;
+  pointer-events: none;
+  left: 98px;
+  top: 245.5px; /*password pozifijas maiņa */
+  transition: 0.2s ease all;
+  color: #8495b7;
+}
+
+/* asterisk simbol uzlikšana */
+#required:after {
+    content:" *";
+    color: red;
+  }
+/* _____ */
+
+#fogot-btn{
+  font-family: "Source Sans Pro", sans-serif;
+  color: #8495b7;
+  text-decoration: none;
+}
+
+.item-login{
+  display: block;
+}
+#signUpPart{
+  display: none;
+  height: 460px;
+  width: 460px;
+  right: 48%;      
+  top: 21%;
+  z-index: 11;
+}
+
+.signup-formCont-1 h1{
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: lighter;
+  color: #3e495e;
+  line-height: 150%;
+  grid-area:overlap;
+}
+
+#signup-formCont{
+  height: 100px;
+  display: block;
+  width: 380px;
+  padding-left: 21.5%;
+  padding-right: 0;
+  padding-top: 6%;
+  padding-bottom: 3%;
+}
+
+.signup-formCont-1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: -5px;
+}
+
+.footer, .footer-mob{
+	margin-top: 130px;
+	text-transform: uppercase;
+	text-align: center;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: bold;
+  font-size: 13pt;
+  color: #a7b3cb
+}
+
+/* sakārto input field un bildes katru savā pusē */
+.signup-formCont-1 img, .signup-formCont-2_2 img,  .signup-formCont-2_3 img, .signup-formCont-2_1 img{
+  float:right
+}
+/* button part nolīdzināšana */
+.signup-formCont-2_4 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.signup-formCont-2_2, .signup-formCont-2_3, .signup-formCont-2_4, .signup-formCont-2_1 {
+  padding-top: 9.5%;
+  padding-bottom: 7%;
+}
+
+.signup-formCont-2_2, .signup-formCont-2_3, .signup-formCont-2_1 {
+  border-bottom: 1px solid #cbd2df;
+}
+
+form input {
+  border: none;
+
+}
+
+input:focus, textarea:focus, select:focus{
+  outline: none;
+}
+
+/* floating effect Name */
+.signup-formCont-2_1 input:focus ~ .SUPfloating-label,
+.signup-formCont-2_1 input:not(:focus):valid ~ .SUPfloating-label{
+  top: 137px;
+  bottom: 10px;
+  left: 100px;
+  font-size: 11px;
+  opacity: 1;
+  color: #8495b7;
+}
+
+.signup-formCont-2_1 .SUPinputText {
+  font-size: 14px;
+  width: 200px;
+  height: 35px;
+  color: black
+}
+
+.signup-formCont-2_1 .SUPfloating-label {
+  position: absolute;
+  pointer-events: none;
+  left: 100px;
+  top: 150px; /* email pozifijas maiņa */
+  transition: 0.2s ease all;
+  color: #8495b7;
+}
+  /* floating effect email */
+.signup-formCont-2_2 input:focus ~ .SUPfloating-label,
+.signup-formCont-2_2 input:not(:focus):valid ~ .SUPfloating-label{
+  top: 200.5px;
+  bottom: 10px;
+  left: 100px;
+  font-size: 11px;
+  opacity: 1;
+  color: #8495b7;
+}
+
+.signup-formCont-2_2 .SUPinputText {
+  font-size: 14px;
+  width: 200px;
+  height: 35px;
+  color: black
+}
+
+.signup-formCont-2_2 .SUPfloating-label {
+  position: absolute;
+  pointer-events: none;
+  left: 100px;
+  top: 214.5px;/*  pozifijas maiņa */
+  transition: 0.2s ease all;
+  color: #8495b7;
+}
+  /* password */
+.signup-formCont-2_3 input:focus ~ .SUPfloating-label,
+.signup-formCont-2_3  input:not(:focus):valid ~ .SUPfloating-label{
+  top: 268.5px;
+  bottom: 10px;
+  left: 100px;
+  font-size: 11px;
+  opacity: 1;
+  color: #8495b7;
+}
+
+.signup-formCont-2_3 .SUPinputText {
+  font-size: 14px;
+  width: 200px;
+  height: 35px;
+  color: black
+}
+
+.signup-formCont-2_3 .SUPfloating-label {
+  position: absolute;
+  pointer-events: none;
+  left: 100px;
+  top: 279.5px;/*password pozifijas maiņa */
+  transition: 0.2s ease all;
+  color: #8495b7;
+}
+
+  /* asterisk simbol uzlikšana */
+#SUPrequired:after {
+    content:" *";
+    color: red;
+}
+  /* _____ */
+
+
+  #SUPsubmit-btn, #submit-btn{
+    width: 140px;
+    height: 50px;
+    border-radius: 50px;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #f89a35;
+    border: 1px solid #f89a35;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    
+  }
+  #SUPsubmit-btn:hover, #submit-btn:hover{
+    background-color:#f8bf35;
+    border: 1px solid #f8bf35;
+    transition: 0.5s;
+  }
+  
+  #SUPfogot-btn{
+    font-family: "Source Sans Pro", sans-serif;
+    color: #8495b7;
+    text-decoration: none;
+  }
+  
+  .SUPrequired{
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 11px;
+    opacity: 1;
+    color: #8495b7;
+  }
+  
+  .signup-formCont-2{
+    margin-top: -13px;
+  }
+  
+  button{
+    border: white;
+    background-color: white;
+  }
+
+ 
+
+/* _Logged in part_____________________________ */
+
+.scroll{
+  align-items: center;
+  height: 346px;
+  width: 340px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.container-userInfo{
+  width: 0%;
+  margin: -300px auto;
+}
+.Upd-input {position: relative;}
+
+.Upd-input .popup-text {
+  visibility: hidden;
+  width: 120px;
+  background-color: rgb(12, 183, 183);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+
+  position: absolute;
+  z-index: 1;
+}
+
+.Upd-input:hover .popup-text {
+  visibility: visible;
+}
+
+.btn-green-div{
+padding-top: 20px;
+margin-bottom: -20px;
+}
+
+.btn-orange {
+  font-family: 'Source Sans Pro', sans-serif;
+  font: bold;
+  width: 140px;
+  height: 50px;
+  border-radius: 50px;
+  text-transform: uppercase;
+  background-color: #f89a35;
+  border: 5px solid #f89a35;
+  color: white;
+  text-decoration: none;
+
+  margin-top: 30px;
+  margin: 0px 0px;
+  text-align: center;
+  font-size: 13px;
+
+}
+.btn-green{
+  font-family: 'Source Sans Pro', sans-serif;
+  font: bold;
+  background-color: green;
+  border: 10px solid green;
+  color: white;
+  border-radius: 50px;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin-top: 30px;
+  margin: 0px 120px;
+  text-align: center;
+  font-size: 20px;
+}
+.btn-red{
+  font-family: 'Source Sans Pro', sans-serif;
+  font: bold;
+  background-color: #ff0000;
+  border: 0px solid  #ff0000;
+  width: 80px;
+  height: 30px;
+  margin: 0px 255px;
+  border-radius: 50px;
+  text-transform: uppercase;
+  color: white;
+}
+
+.usersInfo, .createInf{
+  width: 350px;
+  border-radius: 4px;
+  background-color: #3D63A1;
+  padding: 8px;
+  font-size: 25px;
+  color: #ffffff;
+
+}
+
+.container-item {
+  padding: 5px 0px;
+  color: #ffffff;
+}
+
+.container {
+  margin: 50px auto;
+  width: 90%;
+
+}
+
+  /* Create Post */
+.center {
+  text-align: center;
+}
+.createInf{
+  margin: 20px 0px;
+  width: 430px; 
+  font-size: 18pt;
+}
+.height{
+height: 120px;
+}
+
+
+
+#exit{  
+  position: absolute;
+  top: 60px;
+  left: 30px;
+  z-index: 10;
+  color: White;
+  font-family: 'Source Sans Pro', sans-serif;
+  font: bold;
+  width: 140px;
+  height: 50px;
+  border-radius: 50px;
+  text-transform: uppercase;
+  color: white;
+  background-color: #ff0000;
+  border: 0px solid  #ff0000;
+
+}
+#exit:hover{
+    transform: scale(1.25) !important;
+    position: absolute;
+    top: 60px;
+    left: 30px;
+}
+
+.usrInfo, .UpdTitle{
+    color: #ffffff;
+    position: absolute;
+    left: 44%;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: normal;
+    color: #a7b3cb;
+}
+.UpdTitle{
+  position: relative;
+  left:0%;
+  margin-top: -30px;
+}
+/* __ */
+
+/* __Logged in part style END__________________________________________________________________________________ */
+ /* success message */
+ .done, .wrong{
+  text-align: center;
+  color: white !important;
+  background-color: #7db976;
+  border-radius: 50px;
+  border: 1px solid #185310;
+ }
+ .wrong{
+  background-color: #bc160d;
+  border-radius: 50px;
+  border: 1px solid red;  
+ }
+/*  */
+
+
+.invalidFeedback {
+  color: #ff0000;
+  display: block;
+}
+
+.footer-mob{
+  display: none;
+}
+
+/* BIG Screens setup */
+@media only screen and (max-width: 1355px){
+  .main-info{
+  margin: 194px auto auto 125px;
+  }
+
+
+}  
+@media only screen and (min-width: 1360px){
+
+  .visible-window{
+    width: 1360px;
+    height: 800px;
+  
+  }
+
+} 
+@media only screen and (min-width: 1370px){
+  .main-info{
+      transform: scale(1.1);
+      margin: 220px auto auto auto;
+  }
+  .visible-window{
+    width: 1800px;
+    height: 1012px;
+  
+  }
+
+} 
+@media only screen and (min-width: 1800px){
+  .main-info{
+      transform: scale(1.3);
+      margin: 323px auto auto auto;
+  }
+  .visible-window{
+    width: 2000px;
+    height: 1500px;
+  
+  }
+
+}
+@media only screen and (min-width: 2000px){
+.main-info{
+  transform: scale(1.5);
+  margin: 380px auto auto auto;
+}
+.visible-window{
+  width: 2900px;
+  height: 1631px;
+
+}
+
+}
+@media only screen and (min-width: 3000px){
+  .main-info{
+      transform: scale(2);
+      margin: 650px auto auto auto;
+  }
+  .visible-window{
+    width: 3900px;
+    height: 2193px;
+  
+  }
+  
+
+}
+@media only screen and (min-width: 4000px){
+  .main-info{
+      transform: scale(2.5);
+      margin: 750px auto auto auto;
+  }
+  .visible-window{
+    width: 4800px;
+    height: 2700px;
+  
+  }
+
+}
+
+@media only screen and (min-width: 5000px){
+  .main-info{
+      transform: scale(3);
+      margin: 1050px auto auto auto;
+  }
+  .visible-window{
+    width: 5100px;
+    height: 2868,75px;
+  
+  }
+
+}
+
+
+
+
+
+/* table and phone setup */
+@media(max-width: 960px){
+  body, html{
+    background-color: rgb(15, 24, 46); 	
+    width:100vw;
+    height:100vh;
+
+  }
+
+  .visible-window{
+  height: 0px;
+  width: 0%;
+  
+  }
+
+  .main-info{
+    margin: auto auto auto auto;
+    width: 100%;
+    height: 100%;
+    min-height: 880px;
+    margin-top: 0;
+    margin: auto auto auto auto;
+  }
+
+  .grey-container{
+    width: 100%;
+    height: 100%;
+    min-height: 870px;
+    min-width: 1000px;
+  }
+
+
+   .left{
+    padding-top: 75px;
+    width: 80%;
+    max-width: 275px;
+    float: none;
+    margin: auto;
+  }
+   .right{
+    width: 80%;
+    max-width: 275px;
+    float: none;
+    margin: auto;
+    padding-top: 220px;
+  }
+   .right button{
+    margin-bottom: 10px;
+  }
+
+ 
+  .white-window {
+    width: 1000px;
+    height: 440px;
+    top: -420px;
+    left: 0;
+    background: white;
+  }
+
+  #item-signUp, #item-login {
+    position: absolute;
+    left: 250px;
+  }
+
+
+  .fold-bottom, .fold-middle, .fold-top{
+    display: none;
+  }
+  
+  .footer{
+    display: none;
+  }
+  .footer-mob{
+    display: block;
+    margin-top: -350px;
+  }
+
+ 
+}
+
+@media(max-width: 770px){
+  .main-info{
+   margin-top: 50px;
+   transform: scale(1.15)
+  }
+}
+@media(max-width: 550px){
+
+  .main-info{
+   margin-top: 100px;
+   transform: scale(1.20)
+
+  }
+}
+@media(max-width: 450px){
+  html,body{
+    width:100vw;
+    height:100vh;
+
+  }
+  .main-info{
+   margin-top: 700px;
+   transform: scale(2.7);
+   margin-left: 100px;
+
+  }
+}
